@@ -698,7 +698,7 @@ class MatchPage extends React.Component{
 
                         <div className="navbar-end">
                             <div className="navbar-item" id="userAvatar">
-                                <a className="button is-primary" href="https://discord.com/oauth2/authorize?response_type=code&client_id=919755258169786489&scope=identify&redirect_uri=http://typergame.herokuapp.com/connected">
+                                <a className="button is-primary" href="https://discord.com/oauth2/authorize?response_type=code&client_id=919755258169786489&scope=identify&redirect_uri=http://typer-web.herokuapp.com/connected">
                                     <strong>Connect</strong>
                                 </a>
                             </div>
