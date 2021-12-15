@@ -11,7 +11,7 @@ const auth = async (code) => {
         'client_secret': 'NGsEaC4G9-QqYAbabMYqLQxRuXeb4vdP',
         'grant_type': 'authorization_code',
         'code': code,
-        'redirect_uri': 'http://localhost:3000/connected'
+        'redirect_uri': 'https://typer-web.herokuapp.com'
     }
 
     var options = {
@@ -20,7 +20,7 @@ const auth = async (code) => {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Accept': 'application/json'
         },
-        body: `client_id=919755258169786489&client_secret=NGsEaC4G9-QqYAbabMYqLQxRuXeb4vdP&grant_type=authorization_code&code=${code}&redirect_uri=http://localhost:3000/connected`
+        body: `client_id=919755258169786489&client_secret=NGsEaC4G9-QqYAbabMYqLQxRuXeb4vdP&grant_type=authorization_code&code=${code}&redirect_uri=https://typer-web.herokuapp.com/connected`
     }
 
     const apiResponse = await fetch('https://discord.com/api/v8/oauth2/token', options)
