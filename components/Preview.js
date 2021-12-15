@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default (props) => {
+export default function Preview(props){
 
     const text = props.text.split('')
 

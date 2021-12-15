@@ -3,6 +3,8 @@
 import { db } from './firebase'
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 
+var authData = {}
+
 const auth = async (code) => {
     var data = {
         'client_id': '919755258169786489',
@@ -32,7 +34,7 @@ const auth = async (code) => {
     }
     
     const authResponse = await fetch('https://discord.com/api/v8/users/@me', options2) 
-    const authData = await authResponse.json()
+    authData = await authResponse.json()
 
     return authData
 }

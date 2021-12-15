@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { useEffect } from 'react'
+import Link from 'next/link'
 
 // Utils
 import convertRankID from '../utils/convertRankID'
@@ -20,11 +21,11 @@ class HomePage extends React.Component{
 				let profileURL = `/user/${player.id}`
 				userAvatar.innerHTML = `
 					<a href="${profileURL}">
-						<figure class='image' style='width: 30; height: 30'>
-							<img src=${avatarURL} class='is-rounded'></img>
+						<figure className='image' style='width: 30; height: 30'>
+							<img src=${avatarURL} className='is-rounded'></img>
 						</figure>
 					</a>
-					<a href="/logout" class='button is-text has-text-danger ml-2'><i class="bi bi-box-arrow-right"></i></a>
+					<a href="/logout" className='button is-text has-text-danger ml-2'><i className="bi bi-box-arrow-right"></i></a>
 				`
 			}
 		})
@@ -34,8 +35,8 @@ class HomePage extends React.Component{
 				let data = `
 					<tr>
 						<th>${i+1}</th>
-						<td><a href='/user/${players[i].id}'>${players[i].username}#<span class='has-text-weight-light'>${players[i].discriminator}</span></a></td>
-						<td><img width=55 src='${convertRankID(players[i].rankData.rankID).split(' ')[0]}.png' /> <p style='margin-bottom: 0rem; margin-top: 0' class='has-text-weight-bold'>${convertRankID(players[i].rankData.rankID)}</p></td>
+						<td><a href='/user/${players[i].id}'>${players[i].username}#<span className='has-text-weight-light'>${players[i].discriminator}</span></a></td>
+						<td><img width=55 src='${convertRankID(players[i].rankData.rankID).split(' ')[0]}.png' /> <p style='margin-bottom: 0rem; margin-top: 0' className='has-text-weight-bold'>${convertRankID(players[i].rankData.rankID)}</p></td>
 						<td>${players[i].rankData.rankPoints}</td>
 					</tr>
 				`
@@ -85,38 +86,44 @@ class HomePage extends React.Component{
 	
 				<nav className="navbar" role="navigation" aria-label="main navigation">
 					<div className="navbar-brand">
-						<a className="navbar-item" href="/">
-							<img src="/TyperLogoTransparentCropped.png" alt="Typer: Ranked typing test game." style={{minHeight: 45}} />
-						</a>
+						<Link className="navbar-item" href="/">
+							<a>
+								<img src="/TyperLogoTransparentCropped.png" alt="Typer: Ranked typing test game." style={{minHeight: 45}} />
+							</a>
+						</Link>
 	
-						<a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
-						<span aria-hidden="true"></span>
-						<span aria-hidden="true"></span>
-						<span aria-hidden="true"></span>
-						</a>
+						<Link role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" href="#">
+							<a>
+								<span aria-hidden="true"></span>
+								<span aria-hidden="true"></span>
+								<span aria-hidden="true"></span>
+							</a>
+						</Link>
 					</div>
 	
 					<div className="navbar-menu">
 						<div className="navbar-start">
-							<a className="navbar-item" href='/'>
-								Home
-							</a>
+							<Link className="navbar-item" href='/'>
+								<a>Home</a>
+							</Link>
 							
-							<a className="navbar-item" href='https://discord.com/api/oauth2/authorize?client_id=919755258169786489&permissions=8&scope=bot%20applications.commands'>
+							<Link className="navbar-item" href='https://discord.com/api/oauth2/authorize?client_id=919755258169786489&permissions=8&scope=bot%20applications.commands'>
+							<a>
 								<span className='icon-text'>
 									<span className='icon'>
-										<i class="bi bi-discord"></i>
+										<i className="bi bi-discord"></i>
 									</span> 
 									<span>Invite Typer</span>
 								</span>
 							</a>
+							</Link>
 						</div>
 	
 						<div className="navbar-end">
 							<div className="navbar-item" id="userAvatar">
-								<a className="button is-primary" href="https://discord.com/oauth2/authorize?response_type=code&client_id=919755258169786489&scope=identify&redirect_uri=http://typer-web.herokuapp.com/connected">
-									<strong>Connect</strong>
-								</a>
+								<Link className="button is-primary" href="https://discord.com/oauth2/authorize?response_type=code&client_id=919755258169786489&scope=identify&redirect_uri=http://typer-web.herokuapp.com/connected">
+									<a><strong>Connect</strong></a>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -131,11 +138,11 @@ class HomePage extends React.Component{
 				</div>
 
 				<div>
-					<div class="divider">Ranking</div>
+					<div className="divider">Ranking</div>
 				</div>
 
 				<div id="landingLeaderboard" className='container pb-6 pt-6'>
-					<div class='columns'>
+					<div className='columns'>
 						<div className='column'>
 							<p className='block is-size-2 has-text-weight-bold' style={{marginTop: '2rem'}} id='landingLeaderboardTitle'>Rank up!</p>
 							<p className='block is-size-4 has-text-weight-light' id='landingLeaderboardDescription'>
@@ -145,17 +152,17 @@ class HomePage extends React.Component{
 									Start climbing on the leaderboard by creating matches with Typer BOT.
 								</p>
 							</p>
-							<a href='https://discord.com/api/oauth2/authorize?client_id=919755258169786489&permissions=8&scope=bot%20applications.commands' className='button is-info'>Invite BOT</a>
+							<Link href='https://discord.com/api/oauth2/authorize?client_id=919755258169786489&permissions=8&scope=bot%20applications.commands' className='button is-info'><a>Invite BOT</a></Link>
 						</div>
 						<div className='column'>
-							<table class='table' style={{width: '100%'}}>
+							<table className='table' style={{width: '100%'}}>
 								<thead>
 									<tr>
 										<th>#</th>
 										<th>
 											<span className='icon-text'>
 												<span className='icon'>
-													<i class="bi bi-discord"></i>
+													<i className="bi bi-discord"></i>
 												</span> 
 												<span>Discord</span>
 											</span>
@@ -172,7 +179,7 @@ class HomePage extends React.Component{
 
 				<footer className='footer'>
                     <div className='content has-text-centered'>
-                        <span className='has-text-weight-bold'>Typer</span> by <a href="https://twitter.com/matjs_">Matheus Silva (matjs)</a>. The source code is licensed by <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website is an indie project made by one person, if you want to support me, share the project with your friends!
+                        <span className='has-text-weight-bold'>Typer</span> by <Link href="https://twitter.com/matjs_"><a>Matheus Silva (matjs)</a></Link>. The source code is licensed by <Link href="http://opensource.org/licenses/mit-license.php"><a>MIT</a></Link>. The website is an indie project made by one person, if you want to support me, share the project with your friends!
                     </div>
                 </footer>
 			</div>
@@ -182,6 +189,8 @@ class HomePage extends React.Component{
 
 export default function Home() {
 	return (
-		<HomePage/>
+		<div>
+			<HomePage/>
+		</div>
 	)
 }

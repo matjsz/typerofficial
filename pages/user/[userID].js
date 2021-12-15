@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { useEffect } from 'react'
+import Link from 'next/link'
 
 // Utils
 import convertRankID from '../../utils/convertRankID'
@@ -55,11 +56,11 @@ class UserPage extends React.Component{
                     let profileURL = `/user/${player.id}`
                     userAvatar.innerHTML = `
                         <a href="${profileURL}">
-                            <figure class='image' style='width: 30; height: 30'>
-                                <img src=${avatarURL} class='is-rounded'></img>
+                            <figure className='image' style='width: 30; height: 30'>
+                                <img src=${avatarURL} className='is-rounded'></img>
                             </figure>
                         </a>
-                        <a href="/logout" class='button is-text has-text-danger ml-2'><i class="bi bi-box-arrow-right"></i></a>
+                        <a href="/logout" className='button is-text has-text-danger ml-2'><i className="bi bi-box-arrow-right"></i></a>
                     `
 
                     //---
@@ -86,10 +87,10 @@ class UserPage extends React.Component{
                         for(let i=0; i<matchs.length; i++){
                             let thisMatch = `
                                 <tr>
-                                    <td>${matchs[i].won ? '<i class="bi bi-check-lg" style="color: green"></i>': '<i class="bi bi-x-lg" style="color: red"></i>'}</td>
-                                    <td><a href="/match/${matchs[i].id}">${player.username} <span class='tag is-danger is-light'>VS</span> ${matchs[i].versus} <span class='tag is-info'>${matchs[i].timestamp.toDate().getDate()}/${matchs[i].timestamp.toDate().getMonth()+1}/${matchs[i].timestamp.toDate().getFullYear()}, ${matchs[i].timestamp.toDate().getHours()}:${matchs[i].timestamp.toDate().getMinutes()}</span></a></td>
+                                    <td>${matchs[i].won ? '<i className="bi bi-check-lg" style="color: green"></i>': '<i className="bi bi-x-lg" style="color: red"></i>'}</td>
+                                    <td><a href="/match/${matchs[i].id}">${player.username} <span className='tag is-danger is-light'>VS</span> ${matchs[i].versus} <span className='tag is-info'>${matchs[i].timestamp.toDate().getDate()}/${matchs[i].timestamp.toDate().getMonth()+1}/${matchs[i].timestamp.toDate().getFullYear()}, ${matchs[i].timestamp.toDate().getHours()}:${matchs[i].timestamp.toDate().getMinutes()}</span></a></td>
                                     <td>${matchs[i].won ? '+'+matchs[i].points : '-'+matchs[i].points}</td>
-                                    <td>${matchs[i].situation == 'promoted' ? '<i class="bi bi-arrow-up"></i>' : matchs[i].situation == 'demoted' ? '<i class="bi bi-arrow-down"></i>' : '<i class="bi bi-dash-lg"></i>'}</td>
+                                    <td>${matchs[i].situation == 'promoted' ? '<i className="bi bi-arrow-up"></i>' : matchs[i].situation == 'demoted' ? '<i className="bi bi-arrow-down"></i>' : '<i className="bi bi-dash-lg"></i>'}</td>
                                 </tr>
                             `
                             matchHistory.insertAdjacentHTML('beforeend', thisMatch)
@@ -114,43 +115,49 @@ class UserPage extends React.Component{
                 </Head>
 
                 <nav className="navbar" role="navigation" aria-label="main navigation">
-                    <div className="navbar-brand">
-                        <a className="navbar-item" href="/">
-                            <img src="/TyperLogoTransparentCropped.png" alt="Typer: Ranked typing test game." style={{minHeight: 45}} />
-                        </a>
-
-                        <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        </a>
-                    </div>
-
-                    <div className="navbar-menu">
-                        <div className="navbar-start">
-                            <a className="navbar-item" href='/'>
-                                Home
-                            </a>
-                            
-                            <a className="navbar-item" href='https://discord.com/api/oauth2/authorize?client_id=919755258169786489&permissions=8&scope=bot%20applications.commands'>
-                                <span className='icon-text'>
-                                    <span className='icon'>
-                                        <i class="bi bi-discord"></i>
-                                    </span> 
-                                    <span>Invite Typer</span>
-                                </span>
-                            </a>
-                        </div>
-
-                        <div className="navbar-end">
-                            <div className="navbar-item" id="userAvatar">
-                                <a className="button is-primary" href="https://discord.com/oauth2/authorize?response_type=code&client_id=919755258169786489&scope=identify&redirect_uri=http://typer-web.herokuapp.com/connected">
-                                    <strong>Connect</strong>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
+					<div className="navbar-brand">
+						<Link className="navbar-item" href="/">
+							<a>
+								<img src="/TyperLogoTransparentCropped.png" alt="Typer: Ranked typing test game." style={{minHeight: 45}} />
+							</a>
+						</Link>
+	
+						<Link role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" href="#">
+							<a>
+								<span aria-hidden="true"></span>
+								<span aria-hidden="true"></span>
+								<span aria-hidden="true"></span>
+							</a>
+						</Link>
+					</div>
+	
+					<div className="navbar-menu">
+						<div className="navbar-start">
+							<Link className="navbar-item" href='/'>
+								<a>Home</a>
+							</Link>
+							
+							<Link className="navbar-item" href='https://discord.com/api/oauth2/authorize?client_id=919755258169786489&permissions=8&scope=bot%20applications.commands'>
+							<a>
+								<span className='icon-text'>
+									<span className='icon'>
+										<i className="bi bi-discord"></i>
+									</span> 
+									<span>Invite Typer</span>
+								</span>
+							</a>
+							</Link>
+						</div>
+	
+						<div className="navbar-end">
+							<div className="navbar-item" id="userAvatar">
+								<Link className="button is-primary" href="https://discord.com/oauth2/authorize?response_type=code&client_id=919755258169786489&scope=identify&redirect_uri=http://typer-web.herokuapp.com/connected">
+									<a><strong>Connect</strong></a>
+								</Link>
+							</div>
+						</div>
+					</div>
+				</nav>
 
                 <div className="block" id="userUI" style={{minHeight: '100vh', paddingTop: '3rem'}}>
                     <div className='is-flex is-flex-direction-row has-background-light ml-6 mr-6'>
@@ -176,10 +183,10 @@ class UserPage extends React.Component{
                                 <table className="table" style={{minWidth: '85vw'}}>
                                     <thead>
                                         <tr>
-                                            <th><i class="bi bi-trophy-fill" style={{color: '#ffd21f'}}></i></th>
+                                            <th><i className="bi bi-trophy-fill" style={{color: '#ffd21f'}}></i></th>
                                             <th>Match</th>
                                             <th>RP</th>
-                                            <th><i class="bi bi-bar-chart-line-fill"></i></th>
+                                            <th><i className="bi bi-bar-chart-line-fill"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody id="matchHistoryDeploy">
