@@ -50,7 +50,10 @@ class UserPage extends React.Component{
             getUserData()
             loadedLink = true
         } else{
-            if(getCookie('userID') != undefined){
+            const userAvatar = document.getElementById('userAvatar')
+            
+            if(getCookie('userID') != undefined && getCookie('userID') != ''){
+                console.log(getCookie('userID'))
                 getPlayer(getCookie('userID')).then((player) => {
                     if(player.id != 'Not Found'){
                         let avatarURL = `https://cdn.discordapp.com/avatars/${player.id}/${player.avatar}`
@@ -61,7 +64,7 @@ class UserPage extends React.Component{
                                     <img src=${avatarURL} class='is-rounded'></img>
                                 </figure>
                             </a>
-                            <a href="/logout" className='button is-text has-text-danger ml-2'><i className="bi bi-box-arrow-right"></i></a>
+                            <a href="/logout" class='button is-text has-text-danger ml-2'><i class="bi bi-box-arrow-right"></i></a>
                         `
                     }
                 })

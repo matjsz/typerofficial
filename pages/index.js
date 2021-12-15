@@ -15,7 +15,8 @@ class HomePage extends React.Component{
 	componentDidMount(){
 		const playersRanking = document.getElementById('playersRankingDeploy')
 
-		if(getCookie('userID') != undefined){
+		if(getCookie('userID') != undefined && getCookie('userID') != ''){
+			console.log(getCookie('userID'))
 			getPlayer(getCookie('userID')).then((player) => {
 				if(player.id != 'Not Found'){
 					let avatarURL = `https://cdn.discordapp.com/avatars/${player.id}/${player.avatar}`
@@ -26,7 +27,7 @@ class HomePage extends React.Component{
 								<img src=${avatarURL} class='is-rounded'></img>
 							</figure>
 						</a>
-						<a href="/logout" className='button is-text has-text-danger ml-2'><i className="bi bi-box-arrow-right"></i></a>
+						<a href="/logout" class='button is-text has-text-danger ml-2'><i class="bi bi-box-arrow-right"></i></a>
 					`
 				}
 			})
@@ -37,8 +38,8 @@ class HomePage extends React.Component{
 				let data = `
 					<tr>
 						<th>${i+1}</th>
-						<td><a href='/user/${players[i].id}'>${players[i].username}#<span className='has-text-weight-light'>${players[i].discriminator}</span></a></td>
-						<td><img width=55 src='${convertRankID(players[i].rankData.rankID).split(' ')[0]}.png' /> <p style='margin-bottom: 0rem; margin-top: 0' className='has-text-weight-bold'>${convertRankID(players[i].rankData.rankID)}</p></td>
+						<td><a href='/user/${players[i].id}'>${players[i].username}#<span class='has-text-weight-light'>${players[i].discriminator}</span></a></td>
+						<td><img width=55 src='${convertRankID(players[i].rankData.rankID).split(' ')[0]}.png' /> <p style='margin-bottom: 0rem; margin-top: 0' class='has-text-weight-bold'>${convertRankID(players[i].rankData.rankID)}</p></td>
 						<td>${players[i].rankData.rankPoints}</td>
 					</tr>
 				`

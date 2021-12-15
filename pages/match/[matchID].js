@@ -141,6 +141,24 @@ class MatchPage extends React.Component{
             const p2pointsw = document.getElementById('player2PointsWinner')
             const p2pointsl = document.getElementById('player2PointsLoser')
 
+            if(getCookie('userID') != undefined && getCookie('userID') != ''){
+                console.log(getCookie('userID'))
+                getPlayer(getCookie('userID')).then((player) => {
+                    if(player.id != 'Not Found'){
+                        let avatarURL = `https://cdn.discordapp.com/avatars/${player.id}/${player.avatar}`
+                        let profileURL = `/user/${player.id}`
+                        userAvatar.innerHTML = `
+                            <a href="${profileURL}">
+                                <figure class='image' style='width: 30; height: 30'>
+                                    <img src=${avatarURL} class='is-rounded'></img>
+                                </figure>
+                            </a>
+                            <a href="/logout" class='button is-text has-text-danger ml-2'><i class="bi bi-box-arrow-right"></i></a>
+                        `
+                    }
+                })
+            }
+
             // Setup Rank Icons
             if(this.state.player1.rank != undefined && this.state.player2.rank != undefined){
                 p1rankimg.src = `/${this.state.player1.rank.split(" ")[0]}.png`
@@ -159,34 +177,6 @@ class MatchPage extends React.Component{
             // Start to Listen the Match Status in Real TIme
             listenMatch(this.props.matchID, () => {
                 getMatch(this.props.matchID).then((match) => {
-                    if(getCookie('userID') == this.state.player1.id){
-                        getPlayer(this.state.player1.id).then((player) => {
-                            let avatarURL = `https://cdn.discordapp.com/avatars/${this.state.player1.id}/${player.avatar}`
-                            let profileURL = `/user/${this.state.player1.id}`
-                            userAvatar.innerHTML = `
-                                <a href="${profileURL}">
-                                    <figure className='image' style='width: 30; height: 30'>
-                                        <img src=${avatarURL} className='is-rounded'></img>
-                                    </figure>
-                                </a>
-                                <a href="/logout" className='button is-text has-text-danger'><i className="bi bi-box-arrow-right"></i></a>
-                            `
-                        })
-                    } else if(getCookie('userID') == this.state.player2.id){
-                        getPlayer(this.state.player2.id).then((player) => {
-                            let avatarURL = `https://cdn.discordapp.com/avatars/${this.state.player2.id}/${player.avatar}`
-                            let profileURL = `/user/${this.state.player2.id}`
-                            userAvatar.innerHTML = `
-                                <a href="${profileURL}">
-                                    <figure className='image' style='width: 30; height: 30'>
-                                        <img src=${avatarURL} className='is-rounded'></img>
-                                    </figure>
-                                </a>
-                                <a href="/logout" className='button is-text has-text-danger ml-2'><i className="bi bi-box-arrow-right"></i></a>
-                            `
-                        })
-                    }
-
                     if(match.winner == 'player1'){
                         p1.disabled = true
                         p2.disabled = true
