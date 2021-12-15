@@ -54,11 +54,11 @@ export default function Home() {
                                 let profileURL = `/user/${player.id}`
                                 userAvatar.innerHTML = `
                                     <a href="${profileURL}">
-                                        <figure className='image' style='width: 30; height: 30'>
-                                            <img src=${avatarURL} className='is-rounded'></img>
+                                        <figure class='image' style='width: 30; height: 30'>
+                                            <img src=${avatarURL} class='is-rounded'></img>
                                         </figure>
                                     </a>
-                                    <a href="/logout" className='button is-text has-text-danger ml-2'><i className="bi bi-box-arrow-right"></i></a>
+                                    <a href="/logout" class='button is-text has-text-danger ml-2'><i class="bi bi-box-arrow-right"></i></a>
                                 `
                             })
                         }
