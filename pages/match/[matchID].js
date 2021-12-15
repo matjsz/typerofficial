@@ -670,14 +670,14 @@ class MatchPage extends React.Component{
 
                 <nav className="navbar" role="navigation" aria-label="main navigation">
 					<div className="navbar-brand">
-						<Link className="navbar-item" href="/">
-							<a>
-								<img src="/TyperLogoTransparentCropped.png" alt="Typer: Ranked typing test game." style={{minHeight: 45}} />
+						<Link href="/">
+							<a className="navbar-item">
+								<img src="/TyperLogoTransparentCropped.png" alt="Typer: Ranked typing test game." style={{maxHeight: 45}} />
 							</a>
 						</Link>
 	
-						<Link role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" href="#">
-							<a>
+						<Link href="#">
+							<a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
 								<span aria-hidden="true"></span>
 								<span aria-hidden="true"></span>
 								<span aria-hidden="true"></span>
@@ -687,26 +687,26 @@ class MatchPage extends React.Component{
 	
 					<div className="navbar-menu">
 						<div className="navbar-start">
-							<Link className="navbar-item" href='/'>
-								<a>Home</a>
+							<Link href='/'>
+								<a className="navbar-item">Home</a>
 							</Link>
 							
-							<Link className="navbar-item" href='https://discord.com/api/oauth2/authorize?client_id=919755258169786489&permissions=8&scope=bot%20applications.commands'>
-							<a>
-								<span className='icon-text'>
-									<span className='icon'>
-										<i className="bi bi-discord"></i>
-									</span> 
-									<span>Invite Typer</span>
-								</span>
-							</a>
+							<Link href='https://discord.com/api/oauth2/authorize?client_id=919755258169786489&permissions=8&scope=bot%20applications.commands'>
+								<a className="navbar-item">
+									<span className='icon-text'>
+										<span className='icon'>
+											<i className="bi bi-discord"></i>
+										</span> 
+										<span>Invite Typer</span>
+									</span>
+								</a>
 							</Link>
 						</div>
 	
 						<div className="navbar-end">
 							<div className="navbar-item" id="userAvatar">
-								<Link className="button is-primary" href="https://discord.com/oauth2/authorize?response_type=code&client_id=919755258169786489&scope=identify&redirect_uri=http://typer-web.herokuapp.com/connected">
-									<a><strong>Connect</strong></a>
+								<Link href="https://discord.com/oauth2/authorize?response_type=code&client_id=919755258169786489&scope=identify&redirect_uri=https://typer-web.herokuapp.com/connected">
+									<a className="button is-primary"><strong>Connect</strong></a>
 								</Link>
 							</div>
 						</div>
@@ -724,7 +724,7 @@ class MatchPage extends React.Component{
                                                 <img className="is-rounded" id="player1Avatar"></img>
                                             </figure>
                                             <div className='block m-4 is-flex is-flex-direction-column'>
-                                                <Link className='has-text-weight-bold' id="player2ProfileLink" href={'/user/'+this.state.player1.id}><a>{this.state.player1.username}</a></Link>
+                                                <Link href={'/user/'+this.state.player1.id}><a className='has-text-weight-bold' id="player2ProfileLink">{this.state.player1.username}</a></Link>
                                                 <p className='has-text-weight-light'>#{this.state.player1.discriminator}</p>
                                             </div> 
                                             <div className='block ml-5 is-flex is-flex-direction-row'>
@@ -775,7 +775,7 @@ class MatchPage extends React.Component{
                                                     <img className="is-rounded" id="player2Avatar"></img>
                                                 </figure>
                                                 <div className='block m-4 is-flex is-flex-direction-column'>
-                                                    <Link className='has-text-weight-bold' id="player2ProfileLink" href={"/user/"+this.state.player2.id}><a>{this.state.player2.username}</a></Link>
+                                                    <Link href={"/user/"+this.state.player2.id}><a className='has-text-weight-bold' id="player2ProfileLink" >{this.state.player2.username}</a></Link>
                                                     <p className='has-text-weight-light'>#{this.state.player2.discriminator}</p>
                                                 </div> 
                                                 <div className='block ml-5 is-flex is-flex-direction-row'>
@@ -820,7 +820,7 @@ class MatchPage extends React.Component{
 
                 <footer className='footer has-text-white' style={{backgroundColor: '#36234a'}}>
                     <div className='content has-text-centered'>
-                        <span className='has-text-weight-bold'>Typer</span> by <Link href="https://twitter.com/matjs_"><a>Matheus Silva (matjs)</a></Link>. The source code is licensed by <Link href="http://opensource.org/licenses/mit-license.php"><a>MIT</a></Link>. The website is an indie project made by one person, if you want to support me, share the project with your friends!
+                        <span className='has-text-weight-bold'>Typer</span> by <Link href="https://twitter.com/matjs_"><a>Matheus Silva (matjs)</a></Link>. The source code is licensed by <Link href="https://opensource.org/licenses/mit-license.php"><a>MIT</a></Link>. The website is an indie project made by one person, if you want to support me, share the project with your friends!
                     </div>
                 </footer>
             </div>

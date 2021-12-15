@@ -28,14 +28,14 @@ export default function Home() {
 
             <nav className="navbar" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
-                    <Link className="navbar-item" href="/">
-                        <a>
-                            <img src="/TyperLogoTransparentCropped.png" alt="Typer: Ranked typing test game." style={{minHeight: 45}} />
+                    <Link href="/">
+                        <a className="navbar-item">
+                            <img src="/TyperLogoTransparentCropped.png" alt="Typer: Ranked typing test game." style={{maxHeight: 45}} />
                         </a>
                     </Link>
 
-                    <Link role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" href="#">
-                        <a>
+                    <Link href="#">
+                        <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
@@ -45,26 +45,26 @@ export default function Home() {
 
                 <div className="navbar-menu">
                     <div className="navbar-start">
-                        <Link className="navbar-item" href='/'>
-                            <a>Home</a>
+                        <Link href='/'>
+                            <a className="navbar-item">Home</a>
                         </Link>
                         
-                        <Link className="navbar-item" href='https://discord.com/api/oauth2/authorize?client_id=919755258169786489&permissions=8&scope=bot%20applications.commands'>
-                        <a>
-                            <span className='icon-text'>
-                                <span className='icon'>
-                                    <i className="bi bi-discord"></i>
-                                </span> 
-                                <span>Invite Typer</span>
-                            </span>
-                        </a>
+                        <Link href='https://discord.com/api/oauth2/authorize?client_id=919755258169786489&permissions=8&scope=bot%20applications.commands'>
+                            <a className="navbar-item">
+                                <span className='icon-text'>
+                                    <span className='icon'>
+                                        <i className="bi bi-discord"></i>
+                                    </span> 
+                                    <span>Invite Typer</span>
+                                </span>
+                            </a>
                         </Link>
                     </div>
 
                     <div className="navbar-end">
                         <div className="navbar-item" id="userAvatar">
-                            <Link className="button is-primary" href="https://discord.com/oauth2/authorize?response_type=code&client_id=919755258169786489&scope=identify&redirect_uri=http://typer-web.herokuapp.com/connected">
-                                <a><strong>Connect</strong></a>
+                            <Link href="https://discord.com/oauth2/authorize?response_type=code&client_id=919755258169786489&scope=identify&redirect_uri=https://typer-web.herokuapp.com/connected">
+                                <a className="button is-primary"><strong>Connect</strong></a>
                             </Link>
                         </div>
                     </div>
