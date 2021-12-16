@@ -652,8 +652,11 @@ class MatchPage extends React.Component{
             <div style={{backgroundColor: '#10041c'}} className='has-text-white'>
                 <Head>
                     <title>Match | {this.props.matchID}</title>
-                    <meta name="description" content="Typer is a rank-based typing test game where you can challenge your friends and climb the leaderboard." />
-					<meta name="keywords" contet="Typing Test, Ranked, Typing, Typer, Typing Game, Typing" />
+                    <meta content={this.props.matchID != '' ? `Match | ${this.state.username}` : `Typer Match`} property="og:title" />
+                    <meta content="Typer is a rank-based typing test game where you can challenge your friends and climb the ranked leaderboard." property="og:description" />
+                    <meta content="https://typer-web.herokuapp.com/" property="og:url" />
+                    <meta content="/TyperLogoTransparentCropped.png" property="og:image" />
+                    <meta content="#7b01c2" data-react-helmet="true" name="theme-color" />
 					<meta name="author" content="matjs" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                     <link rel="icon" href="/TyperIco.png" />
