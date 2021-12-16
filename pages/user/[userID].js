@@ -119,8 +119,11 @@ class UserPage extends React.Component{
         return (
             <div>
                 <Head>
-                    <title>Typer | User</title>
-                    <meta name="description" content="Ranked typing test." />
+                    <title>Player | {this.state.username}</title>
+                    <meta name="description" content="Typer is a rank-based typing test game where you can challenge your friends and climb the leaderboard." />
+					<meta name="keywords" contet="Typing Test, Ranked, Typing, Typer, Typing Game, Typing" />
+					<meta name="author" content="matjs" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                     <link rel="icon" href="/TyperIco.png" />
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"></link>
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"></link>
