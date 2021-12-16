@@ -24,7 +24,7 @@ export default function Home() {
                 <meta content='Typer' property="og:title" />
                 <meta content="Typer is a rank-based typing test game where you can challenge your friends and climb the ranked leaderboard." property="og:description" />
                 <meta content="https://typer-web.herokuapp.com/" property="og:url" />
-                <meta content="/TyperLogoTransparentCropped.png" property="og:image" />
+                <meta content="/TyperLogoTransparent.png" property="og:image" />
                 <meta content="#7b01c2" data-react-helmet="true" name="theme-color" />
                 <meta name="author" content="matjs" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
