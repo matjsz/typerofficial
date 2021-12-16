@@ -120,7 +120,7 @@ class UserPage extends React.Component{
             <div>
                 <Head>
                     <title>Player | {this.state.username}</title>
-                    <meta content={this.state.username != '' ? `Player | ${this.state.username}` : `Player Profile`} property="og:title" />
+                    <meta content='Player Profile' property="og:title" />
                     <meta content="Typer is a rank-based typing test game where you can challenge your friends and climb the ranked leaderboard." property="og:description" />
                     <meta content="https://typer-web.herokuapp.com/" property="og:url" />
                     <meta content="/TyperLogoTransparent.png" property="og:image" />
