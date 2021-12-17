@@ -306,33 +306,43 @@ class MatchPage extends React.Component{
                                 p1.disabled = true
                                 p1.placeholder = "Waiting players to be ready..."
                 
-                                userAvatar.innerHTML = (
-                                    <figure className='image is-28x28'>
-                                        <img src={`https://cdn.discordapp.com/avatars/${this.state.player2.id}/${this.state.player2.avatar}`}></img>
-                                    </figure>
-                                )
-
                                 p2button.disable = true
 
                                 p1button.addEventListener("click", () => {
-                                    beReady(this.props.matchID, 'player1')
+                                    beReady(this.props.matchID, 'player2')
                                 })
                             } else{
+                                p1button.disabled = true
+                                p2button.disabled = true
                                 p2.disabled = true
-                                p2.value = "Waiting players to be ready...."
                                 p1.disabled = true
                                 p2.placeholder = "Waiting players to be ready..."
+                                p1.placeholder = "Waiting players to be ready..."
                             }
 
                             if(match.player1ready == true){
-                                p1button.disabled = true
-                                p1button.classList.remove('is-light')
-                                p1button.classList.add('is-primary')
+                                if(getCookie('userID') == undefined || getCookie('userID') == null){
+                                    p1button.disabled = true
+                                    p1button.classList.remove('is-light')
+                                    p1button.classList.add('is-primary')
+                                    p1.placeholder = "User is typing..."
+                                } else{
+                                    p1button.disabled = true
+                                    p1button.classList.remove('is-light')
+                                    p1button.classList.add('is-primary')
+                                }
                             } 
                             if(match.player2ready == true){
-                                p2button.disabled = true
-                                p2button.classList.remove('is-light')
-                                p2button.classList.add('is-primary')
+                                if(getCookie('userID') == undefined || getCookie('userID') == null){
+                                    p2button.disabled = true
+                                    p2button.classList.remove('is-light')
+                                    p2button.classList.add('is-primary')
+                                    p2.placeholder = "User is typing..."
+                                } else{
+                                    p2button.disabled = true
+                                    p2button.classList.remove('is-light')
+                                    p2button.classList.add('is-primary')
+                                }
                             }
                         }
                     }

@@ -62,20 +62,38 @@ const loseMatch = async(loserID, pointsLost, winnerUsername, matchID) => {
                 }
             })
         } else{
-            await updateDoc(docRef, {
-                matchHistory: arrayUnion({
-                    won: false,
-                    versus: winnerUsername,
-                    id: matchID,
-                    timestamp: new Date(),
-                    points: pointsLost,
-                    situation: 'demoted'
-                }),
-                rankData: {
-                    rankPoints: 100-(Math.abs(oldPoints-pointsLost)),
-                    rankID: ranks[nextRank]
-                }
-            })
+            if(actualRank == 0 && docSnap.data().rankData.rankPoints - pointsLost <= 0){
+                console.log('a')
+                await updateDoc(docRef, {
+                    matchHistory: arrayUnion({
+                        won: false,
+                        versus: winnerUsername,
+                        id: matchID,
+                        timestamp: new Date(),
+                        points: pointsLost,
+                        situation: 'neutral'
+                    }),
+                    rankData: {
+                        rankPoints: 0,
+                        rankID: 'bronze-1'
+                    }
+                })
+            } else{
+                await updateDoc(docRef, {
+                    matchHistory: arrayUnion({
+                        won: false,
+                        versus: winnerUsername,
+                        id: matchID,
+                        timestamp: new Date(),
+                        points: pointsLost,
+                        situation: 'demoted'
+                    }),
+                    rankData: {
+                        rankPoints: 100-(Math.abs(oldPoints-pointsLost)),
+                        rankID: ranks[nextRank]
+                    }
+                })
+            }
         }
 
         return true
