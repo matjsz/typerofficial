@@ -1,11 +1,23 @@
 import React from 'react';
 
+function handlerCopy(e) {
+    console.log(e.target.innerHTML);
+    e.preventDefault();
+    e.nativeEvent.stopImmediatePropagation();
+
+    this.setState(prevState => ({
+      counter: prevState.counter + 1
+    }));
+
+    alert("Don't copy it!");
+}
+
 export default function Preview(props){
 
     const text = props.text.split('')
 
     return (
-        <div className="content" onCopy={this.handlerCopy} onCut={() => {return false}} onPaste={() => {return false}} onContextMenu={() => {return false}}>
+        <div className="content" onCopy={handlerCopy} onCut={() => {return false}} onPaste={() => {return false}} onContextMenu={() => {return false}}>
             <blockquote className='has-text-white' style={{backgroundColor: '#36234a'}}>
                 {
                     text.map((s, i) => {
