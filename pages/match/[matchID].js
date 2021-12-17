@@ -142,7 +142,6 @@ class MatchPage extends React.Component{
             const p2pointsl = document.getElementById('player2PointsLoser')
 
             if(getCookie('userID') != undefined && getCookie('userID') != ''){
-                console.log(getCookie('userID'))
                 getPlayer(getCookie('userID')).then((player) => {
                     if(player.id != 'Not Found'){
                         let avatarURL = `https://cdn.discordapp.com/avatars/${player.id}/${player.avatar}`
@@ -306,9 +305,9 @@ class MatchPage extends React.Component{
                                 p1.disabled = true
                                 p1.placeholder = "Waiting players to be ready..."
                 
-                                p2button.disable = true
+                                p1button.disabled = true
 
-                                p1button.addEventListener("click", () => {
+                                p2button.addEventListener("click", () => {
                                     beReady(this.props.matchID, 'player2')
                                 })
                             } else{
@@ -837,8 +836,6 @@ class MatchPage extends React.Component{
 export default function Match() {
     const router = useRouter()
     const { matchID } = router.query
-
-    console.log(matchID)
 
 	return (
 		<MatchPage matchID={matchID}/>
