@@ -5,7 +5,7 @@ export default function Preview(props){
     const text = props.text.split('')
 
     return (
-        <div className="content" oncopy="return false;" oncut="return false;" onpaste="return false;" oncontextmenu="return false;">
+        <div className="content" onCopy={() => {return false}} onCut={() => {return false}} onPaste={() => {return false}} onContextMenu={() => {return false}}>
             <blockquote className='has-text-white' style={{backgroundColor: '#36234a'}}>
                 {
                     text.map((s, i) => {

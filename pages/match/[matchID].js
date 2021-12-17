@@ -758,10 +758,10 @@ class MatchPage extends React.Component{
                             </div>
 
                             <textarea
-                                oncopy="return false;" 
-                                oncut="return false;" 
-                                onpaste="return false;" 
-                                oncontextmenu="return false;"
+                                onCopy={() => {return false}} 
+                                onCut={() => {return false}} 
+                                onPaste={() => {return false}} 
+                                onContextMenu={() => {return false}}
                                 id="player1"
                                 value={this.state.player1.userInput}
                                 onChange={this.onInputChangePlayer1}
@@ -813,10 +813,10 @@ class MatchPage extends React.Component{
                             </div>
 
                              <textarea
-                                oncopy="return false;" 
-                                oncut="return false;" 
-                                onpaste="return false;" 
-                                oncontextmenu="return false;"
+                                onCopy={() => {return false}} 
+                                onCut={() => {return false}} 
+                                onPaste={() => {return false}} 
+                                onContextMenu={() => {return false}}
                                 id="player2"
                                 value={this.state.player2.userInput}
                                 onChange={this.onInputChangePlayer2}
