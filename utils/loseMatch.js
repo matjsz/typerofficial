@@ -63,7 +63,6 @@ const loseMatch = async(loserID, pointsLost, winnerUsername, matchID) => {
             })
         } else{
             if(actualRank == 0 && docSnap.data().rankData.rankPoints - pointsLost <= 0){
-                console.log('a')
                 await updateDoc(docRef, {
                     matchHistory: arrayUnion({
                         won: false,
@@ -78,6 +77,8 @@ const loseMatch = async(loserID, pointsLost, winnerUsername, matchID) => {
                         rankID: 'bronze-1'
                     }
                 })
+
+                return false
             } else{
                 await updateDoc(docRef, {
                     matchHistory: arrayUnion({
@@ -93,6 +94,8 @@ const loseMatch = async(loserID, pointsLost, winnerUsername, matchID) => {
                         rankID: ranks[nextRank]
                     }
                 })
+
+                return true
             }
         }
 
