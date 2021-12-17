@@ -656,6 +656,18 @@ class MatchPage extends React.Component{
         return Math.ceil(parseInt(basePoints) + parseInt(aditionalPoints))
     }
 
+    handlerCopy(e) {
+        console.log(e.target.innerHTML);
+        e.preventDefault();
+        e.nativeEvent.stopImmediatePropagation();
+    
+        this.setState(prevState => ({
+          counter: prevState.counter + 1
+        }));
+    
+        alert("Don't copy it!");
+    }
+
     render() {
         return (
             <div style={{backgroundColor: '#10041c'}} className='has-text-white'>
@@ -758,10 +770,7 @@ class MatchPage extends React.Component{
                             </div>
 
                             <textarea
-                                onCopy={() => {return false}} 
-                                onCut={() => {return false}} 
-                                onPaste={() => {return false}} 
-                                onContextMenu={() => {return false}}
+                                onCopy={this.handlerCopy}
                                 id="player1"
                                 value={this.state.player1.userInput}
                                 onChange={this.onInputChangePlayer1}
@@ -813,7 +822,7 @@ class MatchPage extends React.Component{
                             </div>
 
                              <textarea
-                                onCopy={() => {return false}} 
+                                onCopy={this.handlerCopy} 
                                 onCut={() => {return false}} 
                                 onPaste={() => {return false}} 
                                 onContextMenu={() => {return false}}
