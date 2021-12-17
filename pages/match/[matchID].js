@@ -661,10 +661,6 @@ class MatchPage extends React.Component{
         e.preventDefault();
         e.nativeEvent.stopImmediatePropagation();
     
-        this.setState(prevState => ({
-          counter: prevState.counter + 1
-        }));
-    
         alert("Don't copy it!");
     }
 
