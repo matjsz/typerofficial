@@ -21,8 +21,8 @@ This all starts with me and my friends competing with each other to see who was 
 
 ## Am i going to update Typer frequently?
 
-Well, actually not. Yes, Typer is a huge project and looks like it needs some updates, but i just created it for fun, but it doesn't mean that i won't update it, i will, but not as a main project of mine.
+Well, actually not. Yes, Typer is a huge project and looks like it needs some updates, but i just created it for fun, although it doesn't mean that i won't update it, i will, but not as a main project of mine.
 
 ## I want to contribute at Typer, how can i do this?
 
-Speak with me! Every good plan starts with communication, you can add me on Discord adding my account as a friend: **matjs#1006**, or you can DM me at Twitter: **@matjs_**.
+Speak with me! Every good plan starts with communication, you can add me on Discord as a friend: **matjs#1006**, or you can DM me at Twitter: **@matjs_**.
