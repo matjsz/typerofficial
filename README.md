@@ -1,10 +1,5 @@
 # Typer
 
-![GitHub repo size](https://img.shields.io/github/repo-size/matjsilva/typerofficial?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/matjsilva/typerofficial?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/matjsilva/typerofficial?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/matjsilva/typerofficial?style=for-the-badge)
-
 <img src="https://typer-web.herokuapp.com/TyperLogoTransparentCropped.png" alt="Typer Logo">
 
 > Typer is a rank-based typing test game where you can challenge your friends and climb the ranked leaderboard.Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
