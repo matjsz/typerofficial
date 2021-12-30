@@ -25,4 +25,4 @@ Well, actually not. Yes, Typer is a huge project and looks like it needs some up
 
 ## I want to contribute at Typer, how can i do this?
 
-Speak with me! Every good plan starts with communication, you can add me on discord adding my account
+Speak with me! Every good plan starts with communication, you can add me on Discord adding my account as a friend: **matjs#1006**, or you can DM me at Twitter: **@matjs_**.
