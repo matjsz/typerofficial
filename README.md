@@ -1,6 +1,6 @@
 # Typer
 
-<img src="https://typer-web.herokuapp.com/TyperLogoTransparentCropped.png" alt="Typer Logo">
+<img src="public/TyperLogoTransparentCropped.png" alt="Typer Logo">
 
 > Typer is a rank-based typing test game where you can challenge your friends and climb the ranked leaderboard.
 
