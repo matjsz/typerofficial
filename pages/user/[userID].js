@@ -191,7 +191,7 @@ class UserPage extends React.Component{
                                         <img id="playerRank"></img>
                                     </figure>
                                     <p className='is-size-3 has-font-weight-bold'>{this.state.rank}</p>
-                                    <p className='ml-3'>({this.state.rp} RP)</p>
+                                    <p className='ml-3'>({this.state.rp} <strong>RP</strong>)</p>
                                 </div>
                             </div>
 
